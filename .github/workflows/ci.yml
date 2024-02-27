@@ -29,7 +29,7 @@ jobs:
         ports:
           - 55433:5432
         env:
-          POSTGRES_USER: genialis_base
+          POSTGRES_USER: postgres
           POSTGRES_HOST_AUTH_METHOD: trust
         options: >-
           --health-cmd pg_isready
