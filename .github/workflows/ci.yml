@@ -51,6 +51,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # TODO: remove
+      - name: Get stuck
+        run: |
+          touch lock
+          while [ -f lock ]; do
+            sleep 10
+          done
+
       # NOTE: If we are building the "master" branch or a pull request against the
       # "master" branch, we allow installing pre-releases with the pip command.
       - name: Allow pre-releases for master branch
